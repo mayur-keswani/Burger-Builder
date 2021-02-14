@@ -50,7 +50,7 @@ const BurgerBuilder=(props)=>{
 				PaymentMode:"COD",
 				deliveryMethod:"Fast"
 			}
-			axios.post('/orders',data)	
+			axios.post('/orders.json',data)	
 				.then(res=>{ 
 					setLoading(false)
 					props.modalClosed()
@@ -75,7 +75,7 @@ const BurgerBuilder=(props)=>{
 			</div>
 		  </div>
 
-			<ModalWrapper ingredients={props.ingredients} totalPrice={props.totalPrice} modalClosed={props.modalClosed} show={props.purchasing} clicked={()=> orderHandler()} spinner={loading}>
+			<ModalWrapper ingredients={props.ingredients} totalPrice={props.totalPrice} modalClose={props.modalClosed} show={props.purchasing} clicked={()=> orderHandler()} spinner={loading}>
 				<OrderSummary  ingredients={props.ingredients} totalPrice={props.totalPrice}/>
 			</ModalWrapper>
 				
