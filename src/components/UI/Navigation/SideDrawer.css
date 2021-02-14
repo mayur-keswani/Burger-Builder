@@ -1,0 +1,14 @@
+#sidedrawer{
+	width: 100%;
+	background:linear-gradient(#FED54A, #FF9347);
+	display: block;
+	z-index: 150;
+
+	
+}
+
+@media(min-width:499px){
+	#sidedrawer{
+		display: none;
+	}
+}

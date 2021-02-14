@@ -1,0 +1,5 @@
+.footer{
+	/* display: flex; */
+	background:linear-gradient(#FED54A, #FF9347);
+	z-index: 90;
+}

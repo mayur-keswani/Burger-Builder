@@ -1,0 +1,19 @@
+.modalBox{
+	display: block;
+	margin: auto;
+	padding: 5px;
+	width: 50%;
+	z-index: 500;
+
+	position: absolute;
+	top: 20%;
+	left: 25%;
+
+	background:linear-gradient(#FED54A, #FF9347);;
+
+	box-shadow: 4px 4px 4px grey;
+	border: 1px solid brown;
+	border-radius: 5px;
+	transition: transform 0.3s ease-in;
+	
+}

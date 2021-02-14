@@ -1,0 +1,241 @@
+
+  .bread-at-top {
+	border: 1px solid black;
+    width: 50%;
+	height: 16vh;
+	background: linear-gradient(#F08E4A, #e27b36);
+	margin-top: 10px;
+
+	border-radius: 50% 50% 15% 15%;
+	box-sizing: border-box;
+	box-shadow: inset -15px 0 #c15711;
+
+	position: relative;
+	
+  }
+
+
+  .Seeds1 {
+    width: 4%;
+    height: 9%;
+    position: absolute;
+	background: white;
+	
+    left: 28%;
+    top: 30%;
+    border-radius: 40%;
+    transform: rotate(-20deg);
+    box-shadow: inset -2px -3px #c9c9c9;
+}
+
+.Seeds1:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: white;
+    left: -330%;
+    top: -100%;
+    border-radius: 40%;
+    transform: rotate(60deg);
+    box-shadow: inset -1px 2px #c9c9c9;
+  }
+  
+.Seeds1:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: white;
+    left: 320%;
+    top: 650%;
+    border-radius: 40%;
+    transform: rotate(30deg);
+    box-shadow: inset -1px -3px #c9c9c9;
+  }
+
+  .Seeds2 {
+    width: 4%;
+    height: 9%;
+    position: absolute;
+    background: white;
+    left: 62%;
+    top: 50%;
+    border-radius: 40%;
+    transform: rotate(18deg);
+    box-shadow: inset -3px 0 #c9c9c9;
+  }
+  
+  .Seeds2:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: white;
+    left: 350%;
+    top: -300%;
+    border-radius: 40%;
+    transform: rotate(120deg);
+    box-shadow: inset 1px 3px #c9c9c9;
+  }
+  
+  .cheese{
+	height: 3vh;
+	width: 50%;
+	background: linear-gradient(#f4d004, #d6bb22);
+	margin-top: 5px;
+	border-radius: 20px;
+	box-sizing: border-box;
+  }
+  .meat{
+	height: 5vh;
+	width: 50%;
+	background: linear-gradient(#7f3608, #702e05);
+	margin-top: 5px;
+	border-radius:20px;
+	box-sizing: border-box;
+  }
+  .salad{
+	height: 1vh;
+	width: 50%;
+	background:linear-gradient(#228c1d, #91ce50);
+	margin-top: 5px;
+	
+	border-radius: 50px;
+	box-sizing: border-box;
+  }
+  
+  .bread-at-bottom {
+	height: 16vh;
+	width: 50%;
+	background: linear-gradient(#F08E4A, #e27b36);
+	margin-top: 10px;
+	border-radius: 15% 15% 50% 50%;
+	box-sizing: border-box;
+	box-shadow: inset -15px 0 #c15711;
+  }
+  
+  
+  @media(max-width:576px){
+	.bread-at-top {
+		border: 1px solid black;
+		width: 50%;
+		height: 11vh;
+		background: linear-gradient(#F08E4A, #e27b36);
+		margin-top: 10px;
+	
+		border-radius: 50% 50% 15% 15%;
+		box-sizing: border-box;
+		box-shadow: inset -15px 0 #c15711;
+	
+		position: relative;
+		
+	  }
+	  
+	.Seeds1 {
+		width: 10%;
+		height: 9%;
+		position: absolute;
+		background: white;
+		left: 30%;
+		top: 50%;
+		border-radius: 40%;
+		transform: rotate(-20deg);
+		box-shadow: inset -2px -3px red;
+	}
+	
+	.Seeds1:after {
+		content: "";
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		background: white;
+		left: -170%;
+		top: -260%;
+		border-radius: 40%;
+		transform: rotate(60deg);
+		box-shadow: inset -1px 2px #c9c9c9;
+	  }
+	  
+	.Seeds1:before {
+		content: "";
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		background: white;
+		left: 180%;
+		top: -50%;
+		border-radius: 40%;
+		transform: rotate(60deg);
+		box-shadow: inset -1px -3px #c9c9c9;
+	  }
+	
+	  .Seeds2 {
+		width: 10%;
+		height: 9%;
+		position: absolute;
+		background: white;
+		left: 64%;
+		top: 50%;
+		border-radius: 40%;
+		transform: rotate(10deg);
+		box-shadow: inset -3px 0 #c9c9c9;
+	  }
+	  
+	  .Seeds2:before {
+		content: "";
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		background: white;
+		left: 150%;
+		top: -130%;
+		border-radius: 40%;
+		transform: rotate(90deg);
+		box-shadow: inset 1px 3px #c9c9c9;
+	  }
+	  .cheese{
+		height: 1vh;
+		width: 50%;
+		background:linear-gradient(#f4d004, #d6bb22);
+		margin-top: 5px;
+		border-radius: 20px;
+		box-sizing: border-box;
+	  }
+	  .meat{
+		height: 2vh;
+		width: 50%;
+		background:linear-gradient(#7f3608, #702e05);
+		margin-top: 5px;
+		border-radius: 20px;
+		box-sizing: border-box;
+	  }
+	  .salad{
+		height: 1vh;
+		width: 50%;
+		background: linear-gradient(#228c1d, #91ce50);
+		margin-top: 5px;
+		border-radius: 50px;
+		box-sizing: border-box;
+	  }
+	  
+	  .bread-at-bottom {
+		height: 17vh;
+		width: 50%;
+		background: #bf3325;
+		margin-top: 10px;
+		border-radius: 15% 15% 50% 50%;
+		box-sizing: border-box;
+	  }
+	  .bread-at-bottom {
+		height: 11vh;
+		width: 50%;
+		background:linear-gradient(#F08E4A, #e27b36);
+		box-shadow: inset -15px 0 #c15711;
+		margin-top: 10px;
+		border-radius: 15% 15% 50% 50%;
+		box-sizing: border-box;
+	  } 
+	  
+	  
+  }
