@@ -2,14 +2,21 @@ import React from 'react'
 
 import Layout from '../components/Layout/Layout'
 import Burger from './Burger';
+import Checkout from './Checkout'
 
-import "bootstrap/dist/css/bootstrap.css";
+import {Switch, Route} from 'react-router-dom'
+import "bootstrap/dist/css/bootstrap.css"
 const App=()=>{
 
 	return(
 		<React.Fragment>
 			<Layout>
-					<Burger/>
+				<Switch>
+					<Route path="/checkout"  component={Checkout}/>
+					<Route path="/"  component={Burger}/>
+				</Switch>
+				{/* <Burger/>
+				<Checkout/> */}
 			</Layout>
 		</React.Fragment>
 	)

@@ -11,7 +11,8 @@ const NavigationItem=(props)=>{
 		<div className="nav-box" style={{display: props.show?"block":"none",opacity:props.show?"1":"0"}}> 
 			<ul type="none"  className={NavBoxFlexClass.join(' ')}>
 				<li className="nav-item mx-3 px-3 py-4 my-0 h2"><a className="text-decoration-none" href="/">Home</a></li>
-				<li className="nav-item mx-3 px-3 py-4 my-0 h2 "><a className="text-decoration-none" href="/">Checkout</a></li>
+				<li className="nav-item mx-3 px-3 py-4 my-0 h2 "><a className="text-decoration-none" 
+				href="/checkout">Checkout</a></li>
 				
 			</ul>
 		</div>

@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Fragment } from 'react'
 
 const OrderSummary=(props)=>{
-	useEffect(()=>{
-		console.log("[Inside OrderSummary]")
-	},[props.ingredients])
+	// useEffect(()=>{
+	// 	console.log("[Inside OrderSummary]")
+	// },[props.ingredients])
 
 	
 	const ingredientsSummary=Object.keys(props.ingredients).map(ingr=>{
