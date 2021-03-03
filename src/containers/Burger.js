@@ -2,6 +2,14 @@ import React, { Component, Fragment } from 'react'
 import BurgerBuilder from '../components/BurgerBuilder/BurgerBuilder.js'
 import IngredientContext from '../context/IngredientContext';
 
+
+import Controllers from '../components/BurgerBuilder/Controller/Controllers'
+import ModalWrapper from '../components/UI/Modal/ModalWrapper'
+import OrderSummary from '../components/OrderSummary';
+
+import axios from '../axios-orders';
+import withErrorHandler from '../hoc/withErrorHandler'
+
 let INGREDIENT_PRICE={
 	cheese:40,
 	salad:25,
@@ -17,7 +25,8 @@ class Burger extends Component
 			meat:0,
 		},
 		totalPrice:40,
-		purchasing:false
+		purchasing:false,
+		loading:false
 	}
 
 	
@@ -58,6 +67,21 @@ class Burger extends Component
 		})
 	}
 
+	orderHandler=()=>{
+		let queryParams=[];
+		for(let ingr in this.state.ingredients){
+			queryParams.push( encodeURIComponent(ingr)+'='+this.state.ingredients[ingr] )
+		} // ["meat = 2 ","cheese = 1"]
+
+		queryParams.push("price="+this.state.totalPrice)
+		queryParams=queryParams.join("&");  // [ "meat = 2 & cheese = 1"];
+
+
+		this.props.history.push({
+			pathname:"/checkout",
+			search:'?'+queryParams
+		})
+	 }
 
 
 	render(){
@@ -70,8 +94,7 @@ class Burger extends Component
 		let sum=0;
 		const disabledOrderButton={...this.state.ingredients};
 		for( const item in disabledOrderButton){
-			sum+=disabledOrderButton[item]
-			
+			sum+=disabledOrderButton[item];
 		}
 		
 		let orderable=(sum>0)?true:false	
@@ -86,16 +109,28 @@ class Burger extends Component
 												
 												}}>
 					<BurgerBuilder ingredients={this.state.ingredients} 
-								   totalPrice={this.state.totalPrice}
-								   orderable={orderable}
-								   purchasing={this.state.purchasing}
-								   allowPurchaseHandler={this.allowPurchaseHandler}
-								   modalClosed={this.modalClosed}
-								   />
+								   orderable={orderable} />
+
+					<ModalWrapper 
+						modalClose={()=>this.modalClosed()} 
+						show={this.state.purchasing} 
+						clicked={()=> this.orderHandler()} 
+						spinner={this.state.loading}>
+
+							<OrderSummary  ingredients={this.state.ingredients} totalPrice={this.state.totalPrice}/>
+
+					</ModalWrapper>
+				
+					<Controllers 
+						totalPrice={this.state.totalPrice} 
+						orderable={orderable} 
+						allowPurchaseHandler={()=>this.allowPurchaseHandler()}>
+
+					</Controllers>			   
 				</IngredientContext.Provider>
 			</Fragment>
 		)
 	}
 };
 
-export default Burger
+export default withErrorHandler(Burger,axios)
