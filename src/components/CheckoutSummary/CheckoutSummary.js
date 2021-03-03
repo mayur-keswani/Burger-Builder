@@ -1,6 +1,6 @@
 import React , { Fragment } from 'react'
 import BurgerBuilder from '../BurgerBuilder/BurgerBuilder'
-import OrderSummary from '../OrderSummary.js'
+// import OrderSummary from '../OrderSummary.js'
 const CheckoutSummary = (props) =>{
 	//console.log(props.ingredients)
 	return(
