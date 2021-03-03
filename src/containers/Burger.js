@@ -73,37 +73,10 @@ class Burger extends Component
 			queryParams.push( encodeURIComponent(ingr)+'='+this.state.ingredients[ingr] )
 		} // ["meat = 2 ","cheese = 1"]
 
+		queryParams.push("price="+this.state.totalPrice)
 		queryParams=queryParams.join("&");  // [ "meat = 2 & cheese = 1"];
 
 
-
-		// this.setState({loading:true});
-
-		// let data={
-		// 	ingredients:this.state.ingredients,
-		// 	price:this.state.totalPrice,
-		// 	customer:{
-		// 		name:"John Doe",
-		// 		address:{
-		// 			street:"testStreet",
-		// 			zipcode:382475,
-		// 			country:"India"
-		// 		},
-		// 		email:"test@test.com",	
-		// 	},
-		// 	PaymentMode:"COD",
-		// 	deliveryMethod:"Fast"
-		// }
-		// axios.post('/orders.json',data)	
-		// 	.then(res=>{ 
-		// 		this.setState({loading:false})
-		// 		this.modalClosed()
-		// 		console.log(res);
-		// 	 })
-		// 	.catch(err=>{
-		// 		this.setState({loading:false});
-		// 		console.log(err);
-		// 	})
 		this.props.history.push({
 			pathname:"/checkout",
 			search:'?'+queryParams

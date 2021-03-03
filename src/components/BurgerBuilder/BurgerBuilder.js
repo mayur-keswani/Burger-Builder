@@ -6,10 +6,14 @@ import Ingredient from './Ingredients/Ingredients'
 const BurgerBuilder=(props)=>{
 	
 
-	let transformedIngredient=Object.keys(props.ingredients).map(ingr=>{
-		  return [...Array( props.ingredients[ingr] )].map((_,index)=>{ 
-		  			return <Ingredient type={ingr} key={ingr+index}/>	}) }).reduce((accumulator,currentValue)=>{
-							  return accumulator.concat(currentValue)},[]);
+	let transformedIngredient=Object.keys(props.ingredients)
+		.map(ingr=>{
+			return [...Array( props.ingredients[ingr] )].map( ( _,index)=>{ 
+		  			return <Ingredient type={ingr} key={ingr+index}/>	}) 
+				})
+		.reduce((accumulator,currentValue)=>{
+					return accumulator.concat(currentValue)},
+					[]);
 							  
 	// let transformedIngredient=Object.keys(props.ingredients).map((ingr,index)=>{
 							
