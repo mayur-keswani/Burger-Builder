@@ -16,9 +16,26 @@ class ContactData extends Component{
 				value:"",
 				validation:{
 					required:true,
+					valdateEmail:true
 					
 				},
 				validationMessage:null,
+				isValid:false,
+				touched:false
+			},
+			Phone_No:{
+				element_type:"input",
+				element_config:{
+					type:"number",
+					placeholder:"Phone Number",
+				},
+				value:"",
+				validation:{
+					required:true,
+					minLength:10,
+					maxLength:11,
+				},
+				validationMessage:"Please Enter Valid Phone no. !!",
 				isValid:false,
 				touched:false
 			},
@@ -47,9 +64,9 @@ class ContactData extends Component{
 				value:"",
 				validation:{
 					required:true,
-					minLength:5,
-					
-					
+					valdateZipCode:true,
+
+				
 				},
 				validationMessage:"Please enter valid Zipcode !",
 				isValid:false,
@@ -64,6 +81,7 @@ class ContactData extends Component{
 				value:"",
 				validation:{
 					required:true,
+					minLength:3
 				},
 				validationMessage:"Please enter valid Country name !",
 				isValid:false,
@@ -113,6 +131,20 @@ class ContactData extends Component{
 		if(validation.required){
 			isValid= value.trim()!=='' && isValid
 		}
+		if(validation.validateEmail){
+			if (/^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/.test(value)){
+				isValid=true
+			}else{
+				isValid=false
+			}
+		}
+		if(validation.valdateZipCode){
+			if(/(^\d{6}$)/.test(value)){
+				isValid=true;
+			}else{
+				isValid=false
+			}
+		}
 		if(validation.minLength){
 			isValid = value.length>=validation.minLength && isValid
 		}
@@ -154,6 +186,7 @@ class ContactData extends Component{
 			//console.log(elem)
 			customer[elem]=this.state.formData[elem].value
 		}
+		//console.log(this.props.ingredients)
 		let data={
 			ingredients:this.props.ingredients,
 			price:this.props.totalPrice,
