@@ -28,12 +28,13 @@ do git clone of the repository https://github.com/mayur-keswani/Burger-Builder.g
    _atleast one ingredient need to be added to make order_
  - Placing order successfully and storing into firebase
  - Handling errors precisely and showing error by modal to user without breaking the working of app.
+ - Fetching and Storing  order details on to firebase
  
 ## Future road-map 🛣️:
- - Adding routing to this app
- - Building checkout page
- - Fetching order from Firebase.
- - Form validation
+ - ~~Adding routing to this app~~
+ - ~~Building checkout page~~
+ - ~~Fetching order from Firebase.~~
+ - ~~Form validation~~
  - implementing Redux
  - Adding stripe payment gateway
 ## How you can contribute to this repository 🤝:
@@ -58,7 +59,7 @@ Glad to see you here! Show some love by starring this repo.
 
 ```Javascript
  if (isAwesome) {
-    // thanks in advance :p xoxo
+    // thanks in advance 
     starThisRepository();
   }
 ```  
