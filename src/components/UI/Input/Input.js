@@ -5,11 +5,11 @@ const Input = (props) =>{
 	let inputElement=null
 	let inputElementClass=['form-control m-2 form-control-lg'];
 	let message=null
-	if(props.isValid==false && props.touched){
+	if(props.isValid===false && props.touched){
 		inputElementClass.push('invalid')
 	}
 
-	if(props.isValid==false && props.touched){
+	if(props.isValid===false && props.touched){
 		message=(<p className="ml-2 text-danger h4 text-lead">{props.message}</p>)
 	}
 	
